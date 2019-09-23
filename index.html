@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Color Button</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<style>
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .colorBtn {
+        padding: 0.25rem 0.5rem;
+        border: 3px solid #fefefe;
+        border-radius: 7px;
+        color: #fefefe;
+        background: rgba(0,0,0,0.6);
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        cursor: pointer;
+        outline: none;
+    }
+
+        .colorBtn:hover {
+            background: rgb(0,0,0);
+        }
+</style>
+
+<body>
+    <button type="button" class="colorBtn">Click Me!</button>
+
+    <script>
+
+    const colorBtn = document.querySelector(".colorBtn");
+	const bodyBcg = document.querySelector("body");
+    const colors = ['yellow','red','blue','green','#3b5998','#9c2121','#59b6eb','#041c4b','#041c4b'];
+
+    colorBtn.addEventListener('click', changeColor);
+
+	function changeColor (){
+	    let random = Math.floor(Math.random() * colors.length)
+	    bodyBcg.style.backgroundColor = colors[random];
+	}
+	
+
+    </script>
+</body>
+</html>
